@@ -5,6 +5,7 @@ def choose_area():
     while True:
         print("[I]nshore  [R]eef  [D]eep sea")
         invest_choice = input()
+        invest_choice = invest_choice.upper()
         if invest_choice == "I" or invest_choice == "R" or invest_choice == "D":
             return invest_choice
         print("Invalid choice ")
