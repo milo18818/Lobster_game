@@ -10,6 +10,16 @@ def choose_area():
         print("Invalid choice ")
 
 
+def purchase_pots(current_money):
+    print("do you want to buy more pots they cost $5 each")
+    while True:
+        purchase = int(input())
+        if purchase * 5 > current_money:
+            print("invalid amount")
+        else:
+            return purchase
+
+
 money = 0
 pots = 5
 day = 1
@@ -67,3 +77,10 @@ for X in range(15):
     deep_sea_pots = 0
 
     print("you have $" + str(money) + " money")
+
+    purchase = purchase_pots(money)
+
+    money -= purchase * 5
+    print("you have $" + str(money) + " money left")
+
+    pots += purchase
